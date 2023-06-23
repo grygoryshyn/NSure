@@ -3,10 +3,10 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle as pkl
 
-# Creating the flask app to establish a connection between the front-end HTML website and the backend Python model code
+# Creating the flask app to establish a connection between the HTML and the python model code
 flask_app = Flask(__name__)
 
-# Loading in the stored classification model developed in the 'Model_Development.ipynb' notebook found in the 'Model Development' folder of this repository
+# Loading in the stored classification model found in the 'Model Development' folder of this repository
 NSure_model = pkl.load(open("model.pkl", "rb"))
 
 
@@ -20,11 +20,12 @@ def home():
     return render_template("home.html")
 
 
-# defining logic for handling input data from the preference forms filled in on the web application to be processed by the model so that it can predict insurance probabilities
 @flask_app.route("/predict", methods=["POST"])
 def predict():
     """
-    Creating Processing and Rendering logic for the prediction results to be displayed on the HTML GUI
+    Defining Processing and Rendering logic for to tranform the
+    input data sent by the html forms into formatted array values
+    to create predictions for display on the HTML GUI
     """
 
     # obtaining predicted values through form request sent to NSure_model and formatting them to work with the model's format
@@ -286,7 +287,7 @@ def predict():
     if insurances[ins_3] == "Zilveren Kruis: Basic Sure":
         third_link = "https://www.zilverenkruis.nl/consumenten/zorgverzekering/basisverzekering/basis-zeker"
 
-    # returning all necessary values calculated using the ML model back to the HTML website after processing form input data
+    # returning values calculated using the ML model back to the HTML website
     return render_template(
         "home.html",
         predicted_first_insurance="{}".format(insurances[ins_1]),
