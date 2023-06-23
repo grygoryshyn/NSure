@@ -1,0 +1,389 @@
+<!-- This HTML code re-uses a large part of the code provided by this template resource: https://codepen.io/NielsVoogt/pen/eYBQpPR-->
+
+<!DOCTYPE html>
+<html>
+
+<!-- Defining meta-parameters of the HTML File and Style via CSS-->
+<head>
+  <meta charset="UTF-8">
+  <title>NSure</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<style>
+  .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #50036f;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    width: 100px;
+    transition: all 0.1s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.1s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.1s;
+  }
+
+  .button:hover span {
+    padding-right: 15px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+</style>
+
+<style>
+  body {
+    background-image: url('https://i.ibb.co/k93nVxp/Screenshot-2023-06-22-at-13-59-04.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
+
+<body>
+<!-- Starting the body of the HTML with a navigation section for the left hand side of the website -->
+  <div class="demo-page">
+    <div class="demo-page-navigation">
+      <nav>
+        <ul>
+          <li>
+            <a href="#intro">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 
+                        1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 
+                        1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 
+                        0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+              </svg>
+              About NSure</a>
+          </li>
+          <li>
+            <a href="#preference-field-descriptions">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-align-justify">
+                <line x1="21" y1="10" x2="3" y2="10" />
+                <line x1="21" y1="6" x2="3" y2="6" />
+                <line x1="21" y1="14" x2="3" y2="14" />
+                <line x1="21" y1="18" x2="3" y2="18" />
+              </svg>
+              Field Descriptions
+            </a>
+          </li>
+          <li>
+            <a href="#model-block">
+              <img src="https://pic.onlinewebfonts.com/svg/img_134599.png" width="20" height="15"></img>
+              &nbsp Advisor Model</a>
+          </li>
+          <li>
+            <a href="#mailing">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-feather">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                <line x1="16" y1="8" x2="2" y2="22" />
+                <line x1="17.5" y1="15" x2="9" y2="15" />
+              </svg>
+              Newsletter Sign up</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+<!-- Creating the second section of HTML's body of the HTML relating to the background and general information about the platform+website -->
+    <main class="demo-page-content">
+      <section>
+        <div class="href-target" id="intro"></div>
+        <img src="https://i.ibb.co/thWywXW/NSure-logo.png" alt="" width=50>
+        <h1 class="package-name">
+          NSure's Insurance Plan Advisor
+        </h1>
+        <p>
+          NSure provides you advice for selecting your
+          insurance plans at an instant through Machine Learning
+          technology without requiring you to reveal any
+          sensitive personal information.
+        </p>
+        <strong>How it works:</strong>
+        <ul>
+          <li>Tracks the characteristics of 18 Insurance plans offered among six of the best health insurers operating
+            in the Dutch marlet</li>
+          <li>Identifies <strong>how</strong> other clients select their insurance plans to build an understanding
+            behind customer preference and product choices</li>
+          <li>
+            By gauging your preferences, NSure is capable of personally advising you on the top 3 insurance plans that
+            we think suit you best along with a
+            matching score used to describe how close of a match there is between your preferences and the chocie of
+            insurance plan
+          </li>
+          <li>Avoids you unnecessary costs from insurance brokers whilst delivering quality advice at an instant.</li>
+        </ul>
+      </section>
+
+<!-- Creating the third section of HTML's body of the HTML relating to the preference field descriptions users must fill in to retrieve advice -->
+      <section>
+        <div class="href-target" id="preference-field-descriptions"></div>
+        <h1>
+          Preference Field Descriptions
+        </h1>
+        <p>
+          To ensure we give you the best advice possible, we kindly ask you to share your preferences regarding
+          what you're seeking in an insurance plan. This will enable us to provide tailored recommendations based
+          on your specific needs and preferences. Your input will greatly help us guide you towards the most
+          suitable insurance policy.
+        </p>
+        <strong>Base cost of Insurance in € per month:</strong>
+        <div style="margin-left: 1em;">
+          Refers to the price of the insurance that you are willing to pay without any further additional insurance
+          benefits or policies being bundled along the health insurance policy.
+        </div><br>
+
+        <strong>Payment Frequency:</strong>
+        <div style="margin-left: 1em;">
+          Payment Frequency refers to how you prefer to manage the payment structure of your insurance policy.
+          It determines how often you make payments for the policy. For instance, if you choose a monthly payment
+          frequency, it means you prefer to pay a fee every month throughout the duration of your active policy
+          contract.
+        </div><br>
+
+        <strong>Non-Contracted healthcare reimbursement rate:</strong>
+        <div style="margin-left: 1em;">
+          Non-contracted healthcare refers to choosing a healthcare provider who isn't partnered with your insurance
+          company.
+          In such cases, you'll receive partial reimbursement for the expenses. The portion of costs exceeding the
+          reimbursement
+          rate will require you to personally cover those expenses from your own pocket.
+        </div><br>
+
+        <strong>Choice of add-on insurance benefits:</strong>
+        <div style="margin-left: 1em;">
+          Insurance policies offer various additional health insurance benefits that you might find valuable and worth
+          choosing.
+          These extra benefits usually come with an additional cost on top of the base insurance policy premium.
+        </div><br>
+
+        <strong>Dental insurance benefits:</strong>
+        <div style="margin-left: 1em;">
+          This preference field directly relates to the choice of insurance benefits add-ons related to dental care.
+        </div><br>
+
+        <strong>Physiotherapy insurance benefits:</strong>
+        <div style="margin-left: 1em;">
+          This preference field directly related to the choice of insurance benefits add-ons related to physiotherapy
+          care.
+        </div><br>
+
+        <strong>Mental-health insurance benefits:</strong>
+        <div style="margin-left: 1em;">
+          This field indicates the policy's coverage of mental healthcare related costs and the selection of add-ons
+          which are related
+          to mental-health.
+        </div><br>
+
+        <strong>Coverage for urgent care abroad:</strong>
+        <div style="margin-left: 1em;">
+          States whether you recieve coverage for urgent care whilst being abroad from the Netherlands.
+        </div><br>
+      </section>
+
+<!-- Creating the fourth section of HTML's body of the HTML which is used as a form to collect input data from the user -->
+      <section>
+        <form action="{{ url_for('predict')}}" method="post">
+          <div class="href-target" id="model-block"></div>
+          <h1>
+            Advisor Model
+          </h1>
+          <p>Please provide an answer for all of the preference fields and click on the "Advise" button at the bottom.
+          </p>
+
+          <fieldset class="nice-form-group">
+            <div class="nice-form-group">
+              <label for="cpm"><strong>Base cost of Insurance per month (€):</strong></label>
+              <input type="range" name="CPM" value="110" min="110" max="170"
+                oninput="this.nextElementSibling.value = this.value" required="required">
+              <output>110</output>
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <p><strong>Payment Frequency:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="monthly_payments" name="P_term" value=0>
+              <label for="monthly_payments">Monthly</label><br>
+
+              <input type="radio" id="quarterly_payments" name="P_term" value=1>
+              <label for="quarterly_payments">Quarterly</label><br>
+
+              <input type="radio" id="semi_payments" name="P_term" value=2>
+              <label for="semi_payments">Semi-annual</label><br>
+
+              <input type="radio" id="yearly_payments" name="P_term" value=3>
+              <label for="yearly_payments">Yearly</label><br>
+            </div><br>
+          </fieldset>
+
+
+          <fieldset class="nice-form-group">
+            <p><strong>Coverage of contracted healthcare providers:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="limited_providers" name="Healthcare_cover" value=0>
+              <label for="limited_providers">Limited</label><br>
+
+              <input type="radio" id="wide_providers" name="Healthcare_cover" value=1>
+              <label for=wide_providers>Wide</label><br>
+
+              <input type="radio" id="unlimited_providers" name="Healthcare_cover" value=2>
+              <label for=unlimited_providers>Unlimited</label>
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <div class="nice-form-group">
+              <label for="CPM">Non-Contracted healthcare reimbursement rate (%):</label>
+              <input type="range" name="NC_reimbursement" value="50" min="50" max="100"
+                oninput="this.nextElementSibling.value = this.value" required="required">
+              <output>50</output>
+
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <p><strong>Choice of add-on insurance benefits:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="limited_benefits" name="Bundle_options" value=0>
+              <label for="limited_benefits">Limited</label><br>
+
+              <input type="radio" id="wide_benefits" name="Bundle_options" value=1>
+              <label for="wide_benefits">Wide</label><br>
+
+              <input type="radio" id="unlimited_benefits" name="Bundle_options" value=2>
+              <label for=unlimited_benefits>Unlimited</label>
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <p><strong>Dental insurance benefits:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="no_dental" name="Dental_options" value=0>
+              <label for="no_dental">No</label><br>
+
+              <input type="radio" id="yes_dental" name="Dental_options" value=1>
+              <label for="yes_dental">Yes</label><br>
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <p><strong>Physiotherapy insurance benefits:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="no_physio" name="Physio_term" value=0>
+              <label for="no_physio">No</label><br>
+
+              <input type="radio" id="yes_physio" name="Physio_term" value=1>
+              <label for="yes_physio">Yes</label><br>
+            </div><br>
+          </fieldset>
+
+
+          <fieldset class="nice-form-group">
+            <p><strong>Mental-health insurance benefits:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="no_mental" name="Mental_health_options" value=0>
+              <label for="no_mental">No</label><br>
+
+              <input type="radio" id="yes_mental" name="Mental_health_options" value=1>
+              <label for="yes_mental">Yes</label><br>
+            </div><br>
+          </fieldset>
+
+          <fieldset class="nice-form-group">
+            <p><strong>Coverage for urgent care abroad:</strong></p>
+            <div class="nice-form-group">
+              <input type="radio" id="limited_abroad" name="International_cover" value=0>
+              <label for="limited_abroad">Limited</label><br>
+
+              <input type="radio" id="yes_abroad" name="International_cover" value=1>
+              <label for="yes_abroad">Yes</label><br>
+            </div><br>
+          </fieldset>
+          <br>
+          <button type="submit" class="button" style="vertical-align:middle"><span>Advise </span></button>
+        </form>
+        <br>
+        <div class="nice-form-group">
+          <label>
+            First recommended insurance policy: <span class="emphasis"><strong> {{ predicted_first_insurance }}
+              </strong></span>
+            <a href={{predicted_first_insurance_link}}><img
+                src="https://cdn-icons-png.flaticon.com/512/1154/1154299.png" alt="link to insurance plan"
+                style="width:10px;height:10px;"></a>
+          </label>
+          Matching Score: {{ match_score_first_insurance }}%
+          <br>
+          <br>
+          <br>
+          <label><small>
+              Second recommended insurance policy: <span class="emphasis"> {{ predicted_second_insurance }}</span>
+              <a href={{predicted_second_insurance_link}}><img
+                  src="https://cdn-icons-png.flaticon.com/512/1154/1154299.png" alt="link to insurance plan"
+                  style="width:10px;height:10px;"></a>
+          </label>
+          Matching Score: {{ match_score_second_insurance }}%
+          </small>
+          <br>
+          <label><small>
+              Third recommended insurance policy: <span class="emphasis"> {{ predicted_third_insurance }}</span>
+              <a href={{predicted_third_insurance_link}}><img
+                  src="https://cdn-icons-png.flaticon.com/512/1154/1154299.png" alt="link to insurance plan"
+                  style="width:10px;height:10px;"></a>
+          </label>
+          Matching Score: {{ match_score_third_insurance }}%
+          </small>
+        </div>
+      </section>
+
+<!-- *Purely Visual* Creating the fifth and final section of HTML's body of the HTML which is used for customers to sign up for newsletters from NSure *Purely Visual* -->
+      <section>
+        <div class="href-target" id="mailing"></div>
+        <h1>
+          <svg viewBox="0 0 8 6" xmlns="http://www.w3.org/2000/svg">
+            <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z" />
+          </svg>
+          Newsletter Signup
+        </h1>
+        <p>
+          Sign up to NSure's monthly E-Mail newsletter updating users on the development of the platform and about
+          upcoming events.
+        </p>
+
+        <div class="nice-form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Your email" value="" required />
+          <input type="submit">
+        </div>
+      </section>
+      <footer>
+        NSure: making life- easier
+      </footer>
+    </main>
+  </div> 
