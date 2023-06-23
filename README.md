@@ -10,7 +10,7 @@ In this file is a !**generated**! dataset with 1,800 samples featuring 9 indepen
 ### 2. *Model_Development.ipynb*
 This file contains the python notebook used to train and develop the multi-class classification model which is used to create personalised predictions for insurance policy products in the Dutch market that users should opt in for depending on their personal preferences. The data used to train the models is directly pulled from the *NSure_Data.csv* file. Ultimately a random forest classifier is used as the model of choice. The random forest model is built using the machine learning library scikit-learn. The model is then stored as a python object using the *pickle* library.
 
-### 3. *model.pkl*
+### 3. *model.pkl* https://github.com/grygoryshyn/NSure/blob/main/NSure_app/model.pkl
 This is a python object file which contains the serialized random forest model code trained in *Model_Development.ipynb*. This file is used to create predictions for users.
 
 ### 4. *NSure_model.py*
