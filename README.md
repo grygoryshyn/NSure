@@ -25,8 +25,8 @@ Whilst *home.html* provides the content and structure for the website, this file
 
 ## How to Install and Run the Web App
 
-1) Download the repository on your local machine
-2) Go to the console/terminal/command prompt and run the line ```python NSure_Model.py```
+1) Clone the repository on your local machine
+2) Go to the console/terminal/command prompt and run the line ```python [project root]NSure_app/NSure_Model.py```
 3) Open http://127.0.0.1:5000/ on your web browser
 4) Fill in all required form fields and click on the advise button
 5) Scroll down until end of the section to see your recommended health insurance products 
