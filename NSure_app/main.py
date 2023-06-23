@@ -7,7 +7,7 @@ import pickle as pkl
 flask_app = Flask(__name__)
 
 # Loading in the stored classification model found in the 'Model Development' folder of this repository
-NSure_model = pkl.load(open("model.pkl", "rb"))
+NSure_model = pkl.load(open("models/model.pkl", "rb"))
 
 
 # Defining a Flask route for the root URL of the web application
