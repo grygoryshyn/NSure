@@ -168,3 +168,5 @@ cython_debug/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+echo .DS_Store >> ~/.gitignore_global
